@@ -1,0 +1,39 @@
+:root{
+    --yellow:#F17C12;
+}
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    transition:all .2s linear;
+}
+
+*::selection{
+    background:var(--yellow);
+    color:#fff;
+}
+
+.res{
+    padding: 10px; 
+    margin: 10px; 
+    float: right; 
+    width: 200px
+}
+.btn-orange{
+    background-color: #F17C12;
+    color: #fff;
+}
+.img-tm{
+    width: 271px;
+    height: 374px;
+}
+.org{
+    color: #ffa420;
+}
+.ngr{
+    color: #fff;
+}
