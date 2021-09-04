@@ -21,7 +21,10 @@
     padding: 10px; 
     margin: 10px; 
     float: right; 
-    width: 200px
+    width: 75px
+}
+.rese{
+    width: 575px
 }
 .btn-orange{
     background-color: #F17C12;
@@ -33,7 +36,21 @@
 }
 .org{
     color: #ffa420;
+    font-size: 40px;
+
+}
+.org2{
+    color: #ffa420;
+    font-size: 135px;
+
 }
 .ngr{
-    color: #fff;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+
+}
+.ngr2{
+    font-size: 125px;
+    color: rgb(255, 255, 255);
+
 }
