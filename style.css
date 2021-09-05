@@ -17013,7 +17013,8 @@ iframe {
   background: 0 0;
 }
 .header-style-01 .sticky .sticky-area {
-  background: #fff;
+  background-color: rgba(0, 0, 0, 0.597);
+  color: white;
 }
 .header-style-01 .navbar-nav > .nav-item > .nav-link,
 .header-style-01 .header-customize-item .link {
