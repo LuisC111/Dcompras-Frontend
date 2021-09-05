@@ -1,5 +1,6 @@
 :root{
     --yellow:#F17C12;
+    --orange: #F17C12;
 }
 
 
@@ -13,7 +14,7 @@
 }
 
 *::selection{
-    background:var(--yellow);
+    background:var(--orange);
     color:#fff;
 }
 
@@ -69,5 +70,5 @@ html::-webkit-scrollbar-track{
 }
 
 html::-webkit-scrollbar-thumb{
-    background:var(--yellow);
+    background:var(--orange);
 }
