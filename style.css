@@ -5934,6 +5934,7 @@ input[type="button"].btn-block {
   
 }
 .nav-link {
+  color: white;
   display: block;
   padding: 0.5rem 1rem;
 }
@@ -5947,9 +5948,11 @@ input[type="button"].btn-block {
   cursor: default;
 }
 .nav-tabs {
+  color: white;
   border-bottom: 1px solid #dee2e6;
 }
 .nav-tabs .nav-item {
+  color: white;
   margin-bottom: -1px;
 }
 .nav-tabs .nav-link {
@@ -6086,7 +6089,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  
+  color: white;
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -16515,6 +16518,7 @@ iframe {
   font-size: 16px;
   font-weight: 600;
   height: 100%;
+  color: white;
 }
 .header-customize-item .icon {
   width: 20px;
