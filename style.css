@@ -19909,8 +19909,9 @@ iframe {
   padding: 65px 30px 45px;
 
   opacity: .8;
-  background-color: rgb(0, 0, 0);
-  
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  background-repeat: no-repeat;
+
 }
 .form-login-register .tabs .nav-link h3 {
   color: #999;
