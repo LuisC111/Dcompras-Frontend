@@ -5934,7 +5934,6 @@ input[type="button"].btn-block {
   
 }
 .nav-link {
-  color: white;
   display: block;
   padding: 0.5rem 1rem;
 }
@@ -5948,11 +5947,9 @@ input[type="button"].btn-block {
   cursor: default;
 }
 .nav-tabs {
-  color: white;
   border-bottom: 1px solid #dee2e6;
 }
 .nav-tabs .nav-item {
-  color: white;
   margin-bottom: -1px;
 }
 .nav-tabs .nav-link {
@@ -5971,7 +5968,7 @@ input[type="button"].btn-block {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #848f99;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -6089,7 +6086,7 @@ input[type="button"].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-  color: white;
+  
 }
 .navbar-nav .nav-link {
   padding-right: 0;
@@ -15233,7 +15230,7 @@ button.bg-gray-06:focus {
   color: #f0f0f0 !important;
 }
 .text-dark {
-  color: #000 !important;
+  color: white !important;
 }
 .text-white {
   color: #fff !important;
@@ -16518,7 +16515,6 @@ iframe {
   font-size: 16px;
   font-weight: 600;
   height: 100%;
-  color: white;
 }
 .header-customize-item .icon {
   width: 20px;
@@ -17017,8 +17013,8 @@ iframe {
   background: 0 0;
 }
 .header-style-01 .sticky .sticky-area {
-  color: white;
   background-color: rgba(0, 0, 0, 0.597);
+  color: white;
 }
 .header-style-01 .navbar-nav > .nav-item > .nav-link,
 .header-style-01 .header-customize-item .link {
@@ -19279,7 +19275,7 @@ iframe {
 .nav-pills.tab-style-01 .nav-link :not(.collapsed),
 .nav-pills.tab-style-01 .card-header.collapsed.active,
 .nav-pills.tab-style-01 .card-header.collapsed :not(.collapsed) {
-  color: #000;
+  color: white;
   background: 0 0;
 }
 .nav-pills.tab-style-02 .nav-item {
@@ -19908,14 +19904,18 @@ iframe {
 .form-login-register {
   max-width: 430px;
   margin: 0 auto;
-  background: #fff;
+
   padding: 65px 30px 45px;
+
+  opacity: .8;
+  background-color: rgb(0, 0, 0);
+  
 }
 .form-login-register .tabs .nav-link h3 {
   color: #999;
 }
 .form-login-register .tabs .nav-link.active h3 {
-  color: #000;
+  color: white;
 }
 .form-login-register .tabs .nav-item {
   padding: 0 28px;
@@ -23573,4 +23573,18 @@ button.mfp-arrow:active {
 .price-range .amount {
   background: 0 0;
   border: none;
+}
+
+
+
+
+
+
+ .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: -50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
 }
