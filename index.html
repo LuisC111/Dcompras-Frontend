@@ -16,6 +16,12 @@
 <link rel="stylesheet" href="vendors/animate.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="estilos.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link href="assets/sticky-footer-navbar.css" rel="stylesheet">
 </head>
 <body>
 
@@ -1202,18 +1208,33 @@ Ropa para toda la Familia</a>
     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
     <div class="form-login">
     <form>
+      
     <div class="font-size-md text-dark mb-5">Inicio de Sesión</div>
     <div class="form-group mb-2">
+        <div class="col">
     <label for="username" class="sr-only">Correo</label>
-    <input id="username" type="text" class="form-control" placeholder="Usuario">
-    </div>
+    <input id="username" type="text" class="form-control" placeholder="Correo">
+        </div>    
+</div>
+    
     <div class="form-group mb-3">
     <div class="input-group flex-nowrap align-items-center">
-    <label for="password" class="sr-only">Contraseña</label>
-    <input id="password" type="text" class="form-control" placeholder="Contraseña">
+        <div class="col">
+        <label for="password" class="sr-only">Contraseña</label>
+
+
+   
+        <input class="form-control" type="password" name="senha" id="password" placeholder="Contraseña">
+      </div>
+         
+        <button class="btn btn-primary" type="button" onclick="mostrarContrasena()"><span class="fa fa-eye-slash icon"></span> </button>
+      </div>
+  
+    
+ 
+    
     <a href="#" class="input-group-append text-decoration-none">Olvido su contraseña?</a>
-    </div>
-    </div>
+</div>
     <div class="form-group mb-6">
     <div class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" id="check">
