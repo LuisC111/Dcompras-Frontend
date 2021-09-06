@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D compras | Home Page</title>
+
+    <!-- aos css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./vendors/hstyle.css">
+    <link rel="stylesheet" href="./vendors/form.css">
+
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <a href="#" class="logo"><img src="images/logoD.png" alt=""></a>
+
+    <div id="menu-bar" class="fas fa-hamburger"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#about">Acerca de nosotros</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#popular">Popular</a></li>
+            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#order">Ordenar</a></li>
+        </ul>
+    </nav>
+
+</header>
+<br><br><br><br><br><br>
+
+<!-- header section ends -->
+
+<form class="form" action="./" method="POST">
+  <div class="form__title">Sign up</div>
+  <p class="form__desc">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, nostrum? Laudantium molestiae explicabo numquam animi corrupti debitis ratione, accusamus nemo optio eum vero nesciunt facere aperiam! Labore pariatur accusantium exercitationem.
+  </p>
+  <div class="form__item">
+    <label for="givennames" class="form__label">Given Names</label>
+    <input type="text" class="form__input" name="givennames" id="givennames" placeholder="Enter your given name(s)">
+    <span class="form__error">A sample error message</span>
+  </div>
+  <div class="form__item">
+    <label for="numusers" class="form__label">Number of Users</label>
+    <input type="number" class="form__input form__input--small" name="numusers" id="numusers" min="1" max="5" placeholder="How many users? (Max. 5)">
+    <span class="form__error">A sample error message</span>
+  </div>
+  <div class="form__item">
+    <label for="expirydate" class="form__label">Expiration Date</label>
+    <input type="date" class="form__input form__input--small" name="expirydate" id="expirydate" placeholder="Enter an expiration date">
+    <span class="form__error">A sample error message</span>
+  </div>
+  <div class="form__item">
+    <label for="message" class="form__label">Message</label>
+    <textarea maxlength="500" class="form__input" name="message" id="message" placeholder="Enter a detailed message about why you wish to signup. (Max. 500 chars)"></textarea>
+    <span class="form__error">A sample error message</span>
+  </div>
+  <div class="form__item">
+    <button class="form__btn" type="submit">Sign Up</button>
+  </div>
+</form>
+
+
+
+<!-- home section starts  -->
+
+<br><br>
+
+
+
+
+
+
+
+
+
+<div class="footer">
+
+
+
+    <h1 class="credit">Desarrollado por <a href="#">D' Compras ❤️</a> Todos los derechos reservados 2021. </h1>
+
+</div>
+
+
+<!-- aos js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="./js/happ.js"></script>
+
+
+<!-- initializing aos  -->
+
+<script>
+
+    AOS.init({
+        delay:400,
+        duration:1000
+    })
+
+</script>
+
+</body>
+</html>
