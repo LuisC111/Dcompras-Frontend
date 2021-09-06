@@ -7,7 +7,7 @@
 
     <!-- aos css cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- google fonts cdn link  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
             <li><a href="#about">Acerca de nosotros</a></li>
             <li><a href="#menu">Menú</a></li>
             <li><a href="#popular">Popular</a></li>
-            <li><a href="#gallery">Galeria</a></li>
+            <li><a href="#gallery">Galería</a></li>
             <li><a href="#order">Ordenar</a></li>
         </ul>
     </nav>
@@ -47,46 +47,65 @@
 
 <!-- header section ends -->
 
-<form class="form" action="./" method="POST">
-  <div class="form__title">Sign up</div>
-  <p class="form__desc">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, nostrum? Laudantium molestiae explicabo numquam animi corrupti debitis ratione, accusamus nemo optio eum vero nesciunt facere aperiam! Labore pariatur accusantium exercitationem.
-  </p>
-  <div class="form__item">
-    <label for="givennames" class="form__label">Given Names</label>
-    <input type="text" class="form__input" name="givennames" id="givennames" placeholder="Enter your given name(s)">
-    <span class="form__error">A sample error message</span>
+<div class="vody">
+<form class="form" name="formulario" onSubmit="return validar()" action="" method="POST">
+ 
+
+
+
+  <div class="form">
+    <h1 class="ah1">Petición Negocio</h1>
+    <div class="grupo">
+        <input type="text" name="NombreNegocio" id="NombreNegocio"  onfocus="restaurar()"  onkeypress="return soloLetras(e)"><span class="barra"></span>
+        <label>Nombre del Negocio</label>
+       <br/> <p id="error" class="error"></p>
+
+    </div>
+    <div class="grupo">
+        <input type="text" name="NombrePropietario" id="NombrePropietario"  onfocus="restaurar()" onkeypress="return soloLetras(e)" ><span class="barra"></span>
+        <label>Nombre del Propietario</label>
+        <br/> <p id="error1" class="error"></p>
+      
+    </div>
+    <div class="grupo">
+        <input type="number" name="Nit" id="Nit" onfocus="restaurar()" ><span class="barra"></span>
+        <label>Nit Del Negocio</label>
+        <br/> <p id="error2" class="error"></p>
+    </div>
+    <div class="grupo">
+        <textarea name="RazonSocial" id="RazonSocial" rows="3"  onfocus="restaurar()" onkeypress="return soloLetras(e)" ></textarea><span class="barra"></span>
+        <label>Razón Social del Negocio</label>
+        <br/> <p id="error3" class="error"></p>
+    </div>
+     
+    <div class="grupo">
+      <input type="number" name="Telefono" id="Telefono" onfocus="restaurar()"  ><span class="barra"></span>
+      <label>Teléfono Del Negocio</label>
+      <br/> <p id="error4" class="error"></p>
+
   </div>
-  <div class="form__item">
-    <label for="numusers" class="form__label">Number of Users</label>
-    <input type="number" class="form__input form__input--small" name="numusers" id="numusers" min="1" max="5" placeholder="How many users? (Max. 5)">
-    <span class="form__error">A sample error message</span>
-  </div>
-  <div class="form__item">
-    <label for="expirydate" class="form__label">Expiration Date</label>
-    <input type="date" class="form__input form__input--small" name="expirydate" id="expirydate" placeholder="Enter an expiration date">
-    <span class="form__error">A sample error message</span>
-  </div>
-  <div class="form__item">
-    <label for="message" class="form__label">Message</label>
-    <textarea maxlength="500" class="form__input" name="message" id="message" placeholder="Enter a detailed message about why you wish to signup. (Max. 500 chars)"></textarea>
-    <span class="form__error">A sample error message</span>
-  </div>
-  <div class="form__item">
-    <button class="form__btn" type="submit">Sign Up</button>
-  </div>
+
+  <div class="grupo">
+    <input type="date" name="FechaFundacion" id="FechaFundacion" placeholder="Fecha de fundación" onfocus="restaurar()" ><span class="barra"></span>
+
+    <br/> <p id="error5" class="error"></p>
+</div>
+<div class="grupo">
+  <input type="text" name="TipoNegocio" id="TipoNegocio" onfocus="restaurar()" onkeypress="return soloLetras(e)"><span class="barra"></span>
+  <label>Tipo de Negocio</label>
+  <br/> <p id="error6" class="error"></p>
+  
+
+</div>
+    <button type="submit" onclick="AccionInnerHTML()" >Enviar!</button>
+</div>
+
+</div>
+
 </form>
 
 
-
 <!-- home section starts  -->
-
-<br><br>
-
-
-
-
-
 
 
 
@@ -100,6 +119,10 @@
 </div>
 
 
+
+
+
+
 <!-- aos js cdn link  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -108,6 +131,8 @@
 
 <!-- custom js file link  -->
 <script src="./js/happ.js"></script>
+
+<script src="./js/form.js"></script>
 
 
 <!-- initializing aos  -->
@@ -120,6 +145,8 @@
     })
 
 </script>
+
+
 
 </body>
 </html>

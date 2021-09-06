@@ -448,7 +448,9 @@ header #menu-bar{
 
 .footer{
     background:#282727;
-    padding:1rem 7%;
+    padding:1rem 35%;
+    position: absolute;
+    
 }
 
 .footer .box-container{
