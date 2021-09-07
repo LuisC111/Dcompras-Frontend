@@ -1,137 +1,135 @@
-function validar() { 
-
-  let nombreNegocio = document.formulario.NombreNegocio;
-  let nombrePropietario = document.formulario.NombrePropietario;
-  let nit = document.formulario.Nit;
-  let razonSocial = document.formulario.RazonSocial;
-  let telefono = document.formulario.Telefono;
-  let fechaFundacion = document.formulario.FechaFundacion;
-  let tipoNegocio = document.formulario.TipoNegocio;
-  
-
-
-  
-  let aviso = document.getElementById("error");
-  let aviso1 = document.getElementById("error1");
-  let aviso2 = document.getElementById("error2");
-  let aviso3 = document.getElementById("error3");
-  let aviso4 = document.getElementById("error4");
-  let aviso5 = document.getElementById("error5");
-  let aviso6 = document.getElementById("error6");
-
-
-  aviso.innerHTML = ""
-  aviso1.innerHTML = ""
-  aviso2.innerHTML = ""
-  aviso3.innerHTML = ""
-  aviso4.innerHTML = ""
-  aviso5.innerHTML = ""
-  aviso6.innerHTML = ""
-  
-  let enviar = "si"
-  
-  if (nombreNegocio.value == "" || nombreNegocio.value.indexOf(" ") == 0) {
-    
-     let texto = "Es obligatorio introducir el nombre del negocio."  
-     aviso.innerHTML += texto
-     enviar = "no"
-     }
-
-
-     if (nombrePropietario.value == "" || nombrePropietario.value.indexOf(" ") == 0 ) {
-      let texto = "Es obligatorio introducir el nombre del propietario."  
-      aviso1.innerHTML += texto
-      enviar = "no"
-      }
-
-
-     if (nit.value == "" || nit.value.indexOf(" ") == 0 ) {
-     let texto = "Es obligatorio introducir el Nit del Negocio."  
-     aviso2.innerHTML += texto
-     enviar = "no"
-     }
-
-     if (razonSocial.value == "" || razonSocial.value.indexOf(" ") == 0 ) {
-      let texto = "Es obligatorio introducir la razon social del Negocio."  
-      aviso3.innerHTML += texto
-      enviar = "no"
-      }
-      
-      if (telefono.value == "" || telefono.value.indexOf(" ") == 0 ) {
-        let texto = "Es obligatorio introducir el numero de telefono del Negocio."  
-        aviso4.innerHTML += texto
-        enviar = "no"
-        }
-
-        if (fechaFundacion.value == "" || fechaFundacion.value.indexOf(" ") == 0 ) {
-          let texto = "Es obligatorio introducir la fecha de fundación del Negocio."  
-          aviso5.innerHTML += texto
-          enviar = "no"
-          }
-
-          if (tipoNegocio.value == "" || tipoNegocio.value.indexOf(" ") == 0 ) {
-            let texto = "Es obligatorio introducir el tipo de Negocio."  
-            aviso6.innerHTML += texto
-            enviar = "no"
-            }
-
-
-  if (enviar == "no") {
-    swal('Error!', 'Ha ocurrido un error, revisa todos los campos!', 'error'); 
-    return false
-  }(enviar == "si"){
-  swal("Buen trabajo!", "Se ha enviado correctamente la petición de negocio!", "success");
-  nombreNegocio.value = "";
-  nombrePropietario.value = "";
-  nit.value = "";
-  razonSocial.value = "";
-  telefono.value = "";
-  fechaFundacion.value = "";
-  tipoNegocio.value = "";
-
-  }
-
-  
-  }
-
-  function soloLetras(e) {
-    var key = e.keyCode || e.which,
-      tecla = String.fromCharCode(key).toLowerCase(),
-      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz",
-      especiales = [8, 37, 39, 46],
-      tecla_especial = false;
-
-    for (var i in especiales) {
-      if (key == especiales[i]) {
-        tecla_especial = true;
-        break;
-      }
-    }
-
-    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-      return false;
-    }
-  }
-
-
-function restaurar() {
-  let aviso = document.getElementById("error");
-  aviso.innerHTML = ""
-
-  }
-
-
-
-
-
 
 /*NombreNegocio
-NombrePropietario
-Nit
+nombrePropietario
+nit
 RazonSocial
 Telefono
 FechaFundacion
-TipoNegocio
+tipoNegocio
 
 error
 */
+
+
+
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+const expresiones = {
+	nombreNegocio: /^[a-zA-Z0-9\_\-]{4,24}$/, // Letras, numeros, guion y guion_bajo
+	nombrePropietario: /^[a-zA-ZÀ-ÿ\s]{8,40}$/, // Letras y espacios, pueden llevar acentos.
+  nit: /^[0-9\.\_\-]{4,24}$/, // Letras, numeros, guion y guion_bajo
+  razonSocial: /^[a-zA-ZÀ-ÿ0-9\_\-]{10,65}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,24}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+  tipoNegocio: /^[a-zA-Z0-9\_\-]{4,26}$/ // Letras, numeros, guion y guion_bajo
+}
+
+const campos = {
+	nombreNegocio: false,
+	nombrePropietario: false,
+  nit: false,
+  razonSocial: false,
+	password: false,
+	correo: false,
+	telefono: false,
+  tipoNegocio: false
+}
+
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "nombreNegocio":
+			validarCampo(expresiones.nombreNegocio, e.target, 'nombreNegocio');
+		break;
+		case "nombrePropietario":
+			validarCampo(expresiones.nombrePropietario, e.target, 'nombrePropietario');
+		break;
+    case "nit":
+			validarCampo(expresiones.nit, e.target, 'nit');
+		break;
+    case "razonSocial":
+			validarCampo(expresiones.razonSocial, e.target, 'razonSocial');
+		break;
+		case "password":
+			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword2();
+		break;
+		case "password2":
+			validarPassword2();
+		break;
+		case "correo":
+			validarCampo(expresiones.correo, e.target, 'correo');
+		break;
+		case "telefono":
+			validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+    case "tipoNegocio":
+			validarCampo(expresiones.tipoNegocio, e.target, 'tipoNegocio');
+		break;
+	}
+}
+
+const validarCampo = (expresion, input, campo) => {
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
+
+const validarPassword2 = () => {
+	const inputPassword1 = document.getElementById('password');
+	const inputPassword2 = document.getElementById('password2');
+
+	if(inputPassword1.value !== inputPassword2.value){
+		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__password2 i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos['password'] = false;
+	} else {
+		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__password2 i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos['password'] = true;
+	}
+}
+
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	const terminos = document.getElementById('terminos');
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
+		formulario.reset();
+
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		setTimeout(() => {
+			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto');
+		});
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+	}
+});

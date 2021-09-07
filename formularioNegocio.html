@@ -20,9 +20,15 @@
     <link rel="stylesheet" href="./vendors/form.css">
 
 
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+
 </head>
 <body>
-    
+
 <!-- header section starts  -->
 
 <header>
@@ -47,63 +53,105 @@
 
 <!-- header section ends -->
 
-<div class="vody">
-<form class="form" name="formulario" onSubmit="return validar()" action="" method="POST">
- 
+<main>
+    <form action="" class="formulario" id="formulario">
+        <!-- Grupo: Usuario -->
+        <div class="formulario__grupo" id="grupo__nombreNegocio">
+            <label for="nombreNegocio" class="formulario__label">Nombre del negocio</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nombreNegocio" id="nombreNegocio" placeholder="Supermercado el progreso">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El nombre del negocio tiene que ser de 4 a 24 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
+
+        <!-- Grupo: Nombre -->
+        <div class="formulario__grupo" id="grupo__nombrePropietario">
+            <label for="nombre" class="formulario__label">Nombre del propietario</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nombrePropietario" id="nombrePropietario" placeholder="Juan Garzón">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El nombre tiene que ser de 8 a 40 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
+
+        <!-- Grupo: Nit -->
+        <div class="formulario__grupo" id="grupo__nit">
+            <label for="telefono" class="formulario__label">Nit</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nit" id="nit" placeholder="800.197.268-4">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El nit solo puede contener numeros, puntos y guiones.</p>
+        </div>
+
+        <!-- Grupo: Razón social -->
+        <div class="formulario__grupo" id="grupo__razonSocial">
+            <label for="nombreNegocio" class="formulario__label">Razón social</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="razonSocial" id="razonSocial" placeholder="..." rows="10" cols="50">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La razón social debe contener como minimo 10 caracteres y solo puede contener numeros, letras y guiones.</p>
+        </div>
+
+        <!-- Grupo: Teléfono -->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label for="telefono" class="formulario__label">Teléfono</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+        </div>
+
+
+        <div class="formulario__grupo" id="grupo__FechaFundacion">
+            <label for="telefono" class="formulario__label">Fecha de fundación</label>
+            <div class="formulario__grupo-input">
+               <input class="barra" type="date" name="FechaFundacion" id="FechaFundacion" placeholder="Fecha de fundación" >
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+        </div>
+
+        <!-- Grupo: tipoNegocio -->
+        <div class="formulario__grupo" id="grupo__tipoNegocio">
+            <label for="tipoNegocio" class="formulario__label">Tipo de negocio</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="tipoNegocio" id="tipoNegocio" placeholder="Supermercado">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El tipo del negocio tiene que ser de 4 a 26 caracteres y solo puede contener numeros, letras y guion bajo.</p>
+        </div>
 
 
 
-  <div class="form">
-    <h1 class="ah1">Petición Negocio</h1>
-    <div class="grupo">
-        <input type="text" name="NombreNegocio" id="NombreNegocio"  onfocus="restaurar()"  onkeypress="return soloLetras(e)"><span class="barra"></span>
-        <label>Nombre del Negocio</label>
-       <br/> <p id="error" class="error"></p>
+        
+        <!-- Grupo: Terminos y Condiciones -->
+        <br>     
 
-    </div>
-    <div class="grupo">
-        <input type="text" name="NombrePropietario" id="NombrePropietario"  onfocus="restaurar()" onkeypress="return soloLetras(e)" ><span class="barra"></span>
-        <label>Nombre del Propietario</label>
-        <br/> <p id="error1" class="error"></p>
-      
-    </div>
-    <div class="grupo">
-        <input type="number" name="Nit" id="Nit" onfocus="restaurar()" ><span class="barra"></span>
-        <label>Nit Del Negocio</label>
-        <br/> <p id="error2" class="error"></p>
-    </div>
-    <div class="grupo">
-        <textarea name="RazonSocial" id="RazonSocial" rows="3"  onfocus="restaurar()" onkeypress="return soloLetras(e)" ></textarea><span class="barra"></span>
-        <label>Razón Social del Negocio</label>
-        <br/> <p id="error3" class="error"></p>
-    </div>
-     
-    <div class="grupo">
-      <input type="number" name="Telefono" id="Telefono" onfocus="restaurar()"  ><span class="barra"></span>
-      <label>Teléfono Del Negocio</label>
-      <br/> <p id="error4" class="error"></p>
+        <div class="formulario__grupo" id="grupo__terminos">
+            <label class="formulario__label">
+                <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                Acepto los Terminos y Condiciones
+            </label>
+        </div>
 
-  </div>
 
-  <div class="grupo">
-    <input type="date" name="FechaFundacion" id="FechaFundacion" placeholder="Fecha de fundación" onfocus="restaurar()" ><span class="barra"></span>
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+        </div>
 
-    <br/> <p id="error5" class="error"></p>
-</div>
-<div class="grupo">
-  <input type="text" name="TipoNegocio" id="TipoNegocio" onfocus="restaurar()" onkeypress="return soloLetras(e)"><span class="barra"></span>
-  <label>Tipo de Negocio</label>
-  <br/> <p id="error6" class="error"></p>
-  
-
-</div>
-    <button type="submit" onclick="AccionInnerHTML()" >Enviar!</button>
-</div>
-
-</div>
-
-</form>
-
+        
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn">Enviar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+        
+    </form>
+    
+</main>
 
 <!-- home section starts  -->
 
@@ -145,7 +193,7 @@
     })
 
 </script>
-
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
 
 </body>
